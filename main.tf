@@ -30,7 +30,7 @@ resource "google_compute_instance" "test" {
     }
   }
   labels = "${var.labels}"
-  # metadata {
-  #   ssh-keys = "imuge94:${file("${var.public_key_path}")}"
-  # }
+  metadata = {
+    ssh-keys = "${var.username}:${file("${var.public_key_path}")}"
+  }
 }

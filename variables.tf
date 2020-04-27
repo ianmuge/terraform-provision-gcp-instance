@@ -1,5 +1,5 @@
 variable "network" {
-  default = "test"
+  default = "default"
 }
 variable "tags" {
   default = []
@@ -7,9 +7,17 @@ variable "tags" {
 variable "labels" {
   default = {}
 }
+variable "username" {
+  default="imuge94"
+}
+
+variable "public_key_path" {
+  default="~/.ssh/id_rsa.pub"
+
+}
 variable "instance" {
   default = {
-    count             = 2
+    count             = 1
     name              = "test"
     type              = "n1-standard-1"
     zone              = "a"
